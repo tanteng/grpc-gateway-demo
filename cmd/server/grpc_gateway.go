@@ -9,7 +9,7 @@ import (
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"google.golang.org/grpc"
 
-	gw "test/pb" // Update
+	pb "gw/pb" // Update
 )
 
 var (
@@ -27,7 +27,7 @@ func run() error {
 	// Note: Make sure the gRPC server is running properly and accessible
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
-	err := gw.RegisterGreeterHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts)
+	err := pb.RegisterGreeterHandlerFromEndpoint(ctx, mux, *grpcServerEndpoint, opts)
 	if err != nil {
 		return err
 	}

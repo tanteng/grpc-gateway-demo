@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"test/pb"
+	"gw/pb"
 )
 
 type GreeterServer struct {
